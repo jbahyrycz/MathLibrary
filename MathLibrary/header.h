@@ -1,7 +1,10 @@
 #pragma once
 #include <iostream>
+#include <fstream>
+#include <string>
 #define MAX_TAB_SIZE 500
 
-double LagrangeInterpolation(double nodes[], double values[]);
+int ReadFromFileToTable(const char* filePath, double tab[]);
+double LagrangeInterpolation(const char* nodesFilePath, const char* valuesFilePath);
 
 

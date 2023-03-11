@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="input_files_reader.cpp" />
     <ClCompile Include="lagrange_interpolation.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

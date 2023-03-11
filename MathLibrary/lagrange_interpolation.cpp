@@ -1,18 +1,22 @@
 #include "header.h"
 
-double LagrangeInterpolation(double nodes[], double values[])
+/*Takes nodes and corresponding values from input files, then calculates the value of interpolated function for a given argument (from a keybord)*/
+double LagrangeInterpolation(const char* nodesFilePath, const char* valuesFilePath)
 {
+	double nodes[MAX_TAB_SIZE];
+	double values[MAX_TAB_SIZE];
+	int numOfNodes = ReadFromFileToTable(nodesFilePath, nodes);
+	ReadFromFileToTable(valuesFilePath, values);
+
 	double x;
 	std::cout << "Enter the node (x) for which you want to get the value (f(x)):" << std::endl;
 	std::cin >> x;
 	double temp;
 	double result = 0.000;
-	std::cout << "f(" << x << ") = ";
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < numOfNodes; i++)
 	{
 		temp = 1.000;
-		std::cout << "(" << values[i] << ")";
-		for (int j = 0; j < 4; j++)
+		for (int j = 0; j < numOfNodes; j++)
 		{
 			if (i == j)
 			{
@@ -21,20 +25,12 @@ double LagrangeInterpolation(double nodes[], double values[])
 			else
 			{
 				temp *= x - nodes[j];
-				std::cout << "*(" << temp;
 				temp /= nodes[i] - nodes[j];
-				std::cout << "/" << temp << ")";
 			}
 		}
 		result += values[i] * temp;
 		
-		if (i < 3)
-		{
-			std::cout << " + ";
-		}
-		
 	}
-	std::cout << " = " << result << std::endl;
 	std::cout << "f(" << x << ") = " << result << std::endl;
 	return result;
 }
