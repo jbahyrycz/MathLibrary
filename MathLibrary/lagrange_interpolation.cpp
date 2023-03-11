@@ -31,6 +31,6 @@ double LagrangeInterpolation(const char* nodesFilePath, const char* valuesFilePa
 		result += values[i] * temp;
 		
 	}
-	std::cout << "f(" << x << ") = " << result << std::endl;
+	std::cout << "f(" << x << ") = " << result << std::endl << std::endl;
 	return result;
 }
