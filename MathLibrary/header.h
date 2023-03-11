@@ -6,5 +6,6 @@
 
 int ReadFromFileToTable(const char* filePath, double tab[]);
 double LagrangeInterpolation(const char* nodesFilePath, const char* valuesFilePath);
+double LagrangeInterpolation(int numOfNodes, double nodes[], double values[], double x);
 
 
