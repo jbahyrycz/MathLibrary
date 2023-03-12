@@ -8,5 +8,5 @@ int ReadFromFileToTable(const char* filePath, double tab[]);
 double LagrangeInterpolation(int numOfNodes, double nodes[], double values[], double x);
 double NaturalPolynomial(int numOfA, double tabA[], double x);
 double HornersPolynomial(int numOfA, double tabA[], double x);
-void NewtonsInterpolation(int numOfNodes, double nodes[], double values[], double tabA[]);
+double NewtonsInterpolation(int numOfNodes, double nodes[], double values[], double tabA[], double x);
 

@@ -63,15 +63,11 @@ int main()
 	}
 	std::cout << std::endl;
 
-	/*Newton's Interpolation, as a result we get a table of a factors in Newton's Polynomial.*/
+	/*Newton's Interpolation for unknown function.*/
 	std::cout << "Newton's Interpolation:" << std::endl;
 	int numOfNodes = ReadFromFileToTable("InputFiles/newtons_interpolation_nodes.txt", nodes);
 	ReadFromFileToTable("InputFiles/newtons_interpolation_values.txt", values);
-	NewtonsInterpolation(numOfNodes, nodes, values, tabANewton);
-	for (int i = 0; i < numOfNodes; i++)
-	{
-		std::cout << "a" << i << " = " << tabANewton[i] << std::endl;
-	}
+	NewtonsInterpolation(numOfNodes, nodes, values, tabANewton, 8.000);
 	
 	return 0;
 }

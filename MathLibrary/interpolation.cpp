@@ -26,8 +26,8 @@ double LagrangeInterpolation(int numOfNodes, double nodes[], double values[], do
 	return result;
 }
 
-/*Calculates values of a factors in Newton's Polynomial. Takes nodes and values as arguments.*/
-void NewtonsInterpolation(int numOfNodes, double nodes[], double values[], double tabA[])
+/*Calculates factors in Newton's Polynomial from nodes and corresponding values, then calculates the value of the polynomial for given x.*/
+double NewtonsInterpolation(int numOfNodes, double nodes[], double values[], double tabA[], double x)
 {
 	double diffQuotients[MAX_TAB_SIZE][MAX_TAB_SIZE];
 	for (int j = 0; j < numOfNodes; j++)
@@ -50,4 +50,16 @@ void NewtonsInterpolation(int numOfNodes, double nodes[], double values[], doubl
 			}
 		}
 	}
+
+	double temp = 1.000;
+	double result = 0.000;
+
+	for (int i = 0; i < numOfNodes; i++)
+	{
+		result += tabA[i] * temp;
+		temp *= (x - nodes[i]);
+	}
+	std::cout << "f(" << x << ") = " << result << std::endl;
+
+	return result;
 }
