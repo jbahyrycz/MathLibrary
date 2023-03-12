@@ -9,13 +9,15 @@ double test_values_3[15] = { 0.038, 0.059, 0.100, 0.200, 0.500, 0.800, 0.941, 1.
 
 int main()
 {
+	double x;
 	/*Lagrange Interpolation for unknown function*/
-	LagrangeInterpolation("InputFiles/lagrange_interpolation_nodes.txt", "InputFiles/lagrange_interpolation_values.txt");
+	std::cout << "Enter the node (x) for which you want to get the value (f(x)):" << std::endl;
+	std::cin >> x;
+	LagrangeInterpolation("InputFiles/lagrange_interpolation_nodes.txt", "InputFiles/lagrange_interpolation_values.txt", x);
 
 	/*Lagrange Interpolation for f(x) = 1/(1+x^2) function, analysing the influence that the number of the nodes has on calculations precision.
 	With every function call, our function receives more nodes and values for calculations. As you can see from this experiment:
 	the more nodes given, the more precise result.*/
-	double x;
 	std::cout << "Enter a number between -5 and 5:" << std::endl;
 	std::cin >> x;
 	std::cout << "The correct value for x = " << x << " is: " << 1.000/(1.000+x*x) << std::endl << std::endl;
