@@ -21,7 +21,6 @@ double LagrangeInterpolation(int numOfNodes, double nodes[], double values[], do
 			}
 		}
 		result += values[i] * temp;
-
 	}
 	std::cout << "f(" << x << ") = " << result << std::endl << std::endl;
 	return result;
