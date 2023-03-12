@@ -22,6 +22,7 @@
     <ClCompile Include="input_files_reader.cpp" />
     <ClCompile Include="lagrange_interpolation.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="polynomials.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
