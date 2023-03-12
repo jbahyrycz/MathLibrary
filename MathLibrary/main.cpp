@@ -16,9 +16,12 @@ double tabA[MAX_TAB_SIZE];
 double tabX[MAX_TAB_SIZE];
 double tabY[MAX_TAB_SIZE];
 
+/*Newton's Interpolation*/
+double tabANewton[MAX_TAB_SIZE];
+
 int main()
 {
-	double x;
+	//double x;
 
 	///*Lagrange Interpolation for unknown function*/
 	//int numOfNodes = ReadFromFileToTable("InputFiles/lagrange_interpolation_nodes.txt", nodes);
@@ -58,6 +61,17 @@ int main()
 		tabY[i] = HornersPolynomial(numOfA, tabA, tabX[i]);
 		std::cout << "f(" << tabX[i] << ") = " << tabY[i] << std::endl;
 	}
+	std::cout << std::endl;
 
+	/*Newton's Interpolation, as a result we get a table of a factors in Newton's Polynomial.*/
+	std::cout << "Newton's Interpolation:" << std::endl;
+	int numOfNodes = ReadFromFileToTable("InputFiles/newtons_interpolation_nodes.txt", nodes);
+	ReadFromFileToTable("InputFiles/newtons_interpolation_values.txt", values);
+	NewtonsInterpolation(numOfNodes, nodes, values, tabANewton);
+	for (int i = 0; i < numOfNodes; i++)
+	{
+		std::cout << "a" << i << " = " << tabANewton[i] << std::endl;
+	}
+	
 	return 0;
 }
