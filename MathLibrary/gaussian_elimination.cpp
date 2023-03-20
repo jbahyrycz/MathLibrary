@@ -93,5 +93,5 @@ void backSub(double matrix[N][N + 1])
 
     printf("\nSolution for the system:\n");
     for (int i = 0; i < N; i++)
-        printf("%lf\n", x[i]);
+        printf("x%d = %lf\n", i+1, x[i]);
 }

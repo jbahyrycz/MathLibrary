@@ -1,4 +1,9 @@
 ﻿  gaussian_elimination.cpp
 C:\Studia\Metody numeryczne\MathLibrary\MathLibrary\gaussian_elimination.cpp(50,19): warning C4244: "inicjowanie": konwersja z "double" do "int", możliwa utrata danych
 C:\Studia\Metody numeryczne\MathLibrary\MathLibrary\gaussian_elimination.cpp(54,36): warning C4244: "=": konwersja z "double" do "int", możliwa utrata danych
+  input_files_reader.cpp
+  interpolation.cpp
+  main.cpp
+  polynomials.cpp
+  Generowanie kodu...
   MathLibrary.vcxproj -> C:\Studia\Metody numeryczne\MathLibrary\x64\Debug\MathLibrary.exe

@@ -61,7 +61,6 @@ void ReadMatrixFromFileToTable(const char* filePath, double matrix[N][N + 1])
 	std::string str;
 	std::fstream inputFile;
 	inputFile.open(filePath, std::ios::in);
-	int numOfElements;
 	if (!inputFile)
 	{
 		std::cout << "Error! Cannot open " << filePath << " file!" << std::endl;
